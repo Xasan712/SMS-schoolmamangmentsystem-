@@ -1,7 +1,7 @@
 cst = """
 1.Student
 2.Teacher
-
+3.All users
 """
 
 
@@ -12,7 +12,13 @@ s= """
 School management system
 1.Login
 2.Register
+
 ->
+"""
+
+au = """
+1.Teacher users
+2.Student users
 """
 
 users = {
@@ -52,7 +58,7 @@ tech = """
 3. remove students
 """
 
-tusers={
+t_users={
     "Teachers": {
         "1": {
             "fullname": "Durdona",# noqa

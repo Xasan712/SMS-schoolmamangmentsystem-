@@ -1,4 +1,4 @@
-from users import s,d,users,tusers,tech,cst
+from users import s,d,users,t_users,tech,cst,au
 
 # data types for while
 
@@ -56,7 +56,7 @@ while 1:
         tid = str(input("Id: "))
         t_username = str(input("username:"))
         t_password = str(input("password:"))
-        if t_username == tusers['Teachers'][tid]["username"] and t_password == str(tusers['Teachers'][tid]["password"]):
+        if t_username == t_users['Teachers'][tid]["username"] and t_password == str(t_users['Teachers'][tid]["password"]):
                 print(tech)
                 tech_p = str(input("choose (1-3): "))
                 if tech_p == "1":  # Add grade to a student
@@ -65,6 +65,7 @@ while 1:
                         new_grade = input("New grade: ")
                         users["students"][student_id]["grade"] = int(new_grade)
                         print(f"Successfully changed {student_id}.")
+                        print(users['students'][student_id]['grade'])
                 if tech_p == "2":
                     # Collect all unique classes
                     classes = set([users["students"][sid]["class"] for sid in users["students"]])
@@ -77,5 +78,12 @@ while 1:
                             print(f"Student ID: {k}, Fullname: {v['fullname']}, Grade: {v['grade']}")
                 if tech_p == "3":
                     ...
+    if tsc == "3":
+        print(au)
+        cau = str(input("choose (1-2): "))
+        if cau == "1":
+            print(t_users['Teachers'])
+        elif cau == "2":
+            print(users['students'])
 
 
