@@ -32,7 +32,7 @@ users = {
             "password": 2222,
             "grade": 5,
             "lesson": "Python,Math,English",
-            "class": "10b23",
+            "class": "10a23",
             "homeTask": "Decorators"
         },
 
@@ -53,16 +53,16 @@ tech = """
 """
 
 tusers={
-"Teachers": {
+    "Teachers": {
         "1": {
-            "fullname": "Durdona",
-            "username": "durdona02",
+            "fullname": "Durdona",# noqa
+            "username": "durdona02", # noqa
             "password": 2222,
 
         },
         "2": {
-            "fullname": "Shaxlo",
-            "username": "shaxlo02",
+            "fullname": "Shaxlo",# noqa
+            "username": "shaxlo02",# noqa
             "password": 3333,
         },
 

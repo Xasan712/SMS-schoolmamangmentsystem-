@@ -41,7 +41,7 @@ while 1:
             lesson = input("Enter lessons (comma-separated): ")
             student_class = input("Enter class: ")
             home_task = input("Enter home task: ")
-            newstudent = {
+            new_student = {
                 "fullname": fullname,
                 "username": username,
                 "password": password,
@@ -50,12 +50,32 @@ while 1:
                 "class": student_class,
                 "homeTask": home_task
             }
-            users["students"][newId] = newstudent
+            users["students"][newId] = new_student
             print(f"Student successfully add: {newId}")
     if tsc == "2":
-        print(tech)
-        tp = str(input("choose (1-3): "))
-
-
+        tid = str(input("Id: "))
+        t_username = str(input("username:"))
+        t_password = str(input("password:"))
+        if t_username == tusers['Teachers'][tid]["username"] and t_password == str(tusers['Teachers'][tid]["password"]):
+                print(tech)
+                tech_p = str(input("choose (1-3): "))
+                if tech_p == "1":  # Add grade to a student
+                    student_id = input("Enter Student ID : ")
+                    if student_id in users["students"]:
+                        new_grade = input("New grade: ")
+                        users["students"][student_id]["grade"] = int(new_grade)
+                        print(f"Successfully changed {student_id}.")
+                if tech_p == "2":
+                    # Collect all unique classes
+                    classes = set([users["students"][sid]["class"] for sid in users["students"]])
+                    print("Available classes:")
+                    for c in classes:
+                        print(c)
+                    cc = input("Choose class: ")
+                    for k, v in users["students"].items():
+                        if v["class"] == cc:
+                            print(f"Student ID: {k}, Fullname: {v['fullname']}, Grade: {v['grade']}")
+                if tech_p == "3":
+                    ...
 
 
